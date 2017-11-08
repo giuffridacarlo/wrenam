@@ -588,7 +588,6 @@ public class SMSLdapObject extends SMSObjectDB implements SMSObjectListener {
             int numOfEntries, int timeLimit, boolean sortResults,
             boolean ascendingOrder, Set<String> excludes)
             throws SSOException, SMSException {
-        Connection conn = getConnection(adminPrincipal);
         try (Connection conn = getConnection(adminPrincipal)){
 	        ConnectionEntryReader results = searchObjectsEx(token, startDN, filter,
                 numOfEntries, timeLimit, sortResults, ascendingOrder, conn);
